@@ -1,0 +1,231 @@
+states_update_mode: replace
+states:
+- name: use-external-cf-db
+  label: use-external-cf-db.label
+  log_path: /data/logs/use-external-cf-db.log
+  script: scripts/use-external-cf-db.sh
+
+call_state:
+  states_to_rerun: [ "deploy-cf" ]
+  previous_states: [ "prepare-cf" ]
+  rerun_on_run_of_states: [ "prepare-cf" ]
+  next_states: [ "deploy-cf" ]
+
+ui_metadata:
+ externaldb:
+   label: externaldb.label
+   groups:
+   - name: general
+     label: externaldb.groups.general.label
+     description: externaldb.groups.general.description
+     properties:
+     - name: db_type
+       label: externaldb.groups.general.db_type.label
+       description: externaldb.groups.general.db_type.description
+       type: dropdown
+       mandatory: true
+       default: postgres
+       items:
+         - id: postgres
+           label: postgres
+         - id: mysql
+           label: mysql
+     - name: db_port
+       label: externaldb.groups.general.db_port.label
+       description: externaldb.groups.general.db_port.description
+       type: number
+       mandatory: true
+       sample_value: 5432
+       validation_regex: "^\\d{1,5}$"
+       validation_error_message: externaldb.groups.general.db_port.validation_error_message
+   - name: bbs
+     label: externaldb.groups.bbs.label
+     description: externaldb.groups.bbs.description
+     properties:
+     - name: bbs_db_name
+       label: externaldb.db_name.label
+       description: externaldb.groups.bbs.bbs_db_name.description
+       type: text
+       default: diego
+       mandatory: true
+     - name: bbs_db_host
+       label: externaldb.db_host.label
+       type: text
+       mandatory: true
+       validation_regex: "^[-A-Za-z0-9]+(\\.[-A-Za-z0-9]+)+$"
+       validation_error_message: externaldb.db_host.validation_error_message
+     - name: bbs_db_user
+       label: externaldb.db_user.label
+       type: text
+       mandatory: true
+     - name: bbs_db_password
+       label: externaldb.db_password.label
+       type: password
+       mandatory: true
+   - name: cloud_controller
+     label: externaldb.groups.cc.label
+     description: externaldb.groups.cc.description
+     properties:
+     - name: cc_db_name
+       label: externaldb.db_name.label
+       description: externaldb.groups.cc.cc_db_name.description
+       type: text
+       default: cloud_controller
+       mandatory: true
+     - name: cc_db_host
+       label: externaldb.db_host.label
+       type: text
+       mandatory: true
+       validation_regex: "^[-A-Za-z0-9]+(\\.[-A-Za-z0-9]+)+$"
+       validation_error_message: externaldb.db_host.validation_error_message
+     - name: cc_db_user
+       label: externaldb.db_user.label
+       type: text
+       mandatory: true
+     - name: cc_db_password
+       label: externaldb.db_password.label
+       type: password
+       mandatory: true
+   - name: credhub
+     label: externaldb.groups.credhub.label
+     description: externaldb.groups.credhub.description
+     properties:
+     - name: credhub_db_name
+       label: externaldb.db_name.label
+       description: externaldb.groups.credhub.credhub_db_name.description
+       type: text
+       default: credhub
+       mandatory: true
+     - name: credhub_db_host
+       label: externaldb.db_host.label
+       type: text
+       mandatory: true
+       validation_regex: "^[-A-Za-z0-9]+(\\.[-A-Za-z0-9]+)+$"
+       validation_error_message: externaldb.db_host.validation_error_message
+     - name: credhub_db_user
+       label: externaldb.db_user.label
+       type: text
+       mandatory: true
+     - name: credhub_db_password
+       label: externaldb.db_password.label
+       type: password
+       mandatory: true
+   - name: locket
+     label: externaldb.groups.locket.label
+     description: externaldb.groups.locket.description
+     properties:
+     - name: locket_db_name
+       label: externaldb.db_name.label
+       description: externaldb.groups.locket.locket_db_name.description
+       type: text
+       default: locket
+       mandatory: true
+     - name: locket_db_host
+       label: externaldb.db_host.label
+       type: text
+       mandatory: true
+       validation_regex: "^[-A-Za-z0-9]+(\\.[-A-Za-z0-9]+)+$"
+       validation_error_message: externaldb.db_host.validation_error_message
+     - name: locket_db_user
+       label: externaldb.db_user.label
+       type: text
+       mandatory: true
+     - name: locket_db_password
+       label: externaldb.db_password.label
+       type: password
+       mandatory: true
+   - name: policy_server
+     label: externaldb.groups.policy_server.label
+     description: externaldb.groups.policy_server.description
+     properties:
+     - name: policy_server_db_name
+       label: externaldb.db_name.label
+       description: externaldb.groups.policy_server.policy_server_db_name.description
+       type: text
+       default: network_policy
+     - name: policy_server_db_host
+       label: externaldb.db_host.label
+       type: text
+       mandatory: true
+       validation_regex: "^[-A-Za-z0-9]+(\\.[-A-Za-z0-9]+)+$"
+       validation_error_message: externaldb.db_host.validation_error_message
+     - name: policy_server_db_user
+       label: externaldb.db_user.label
+       type: text
+       mandatory: true
+     - name: policy_server_db_password
+       label: externaldb.db_password.label
+       type: password
+       mandatory: true
+   - name: routing_api
+     label: externaldb.groups.routing_api.label
+     description: externaldb.groups.routing_api.description
+     properties:
+     - name: routing_api_db_name
+       label: externaldb.db_name.label
+       description: externaldb.groups.routing_api.routing_api_db_name.description
+       type: text
+       default: routing-api
+       mandatory: true
+     - name: routing_api_db_host
+       label: externaldb.db_host.label
+       type: text
+       mandatory: true
+       validation_regex: "^[-A-Za-z0-9]+(\\.[-A-Za-z0-9]+)+$"
+       validation_error_message: externaldb.db_host.validation_error_message
+     - name: routing_api_db_user
+       label: externaldb.db_user.label
+       type: text
+       mandatory: true
+     - name: routing_api_db_password
+       label: externaldb.db_password.label
+       type: password
+       mandatory: true
+   - name: silk_controller
+     label: externaldb.groups.silk_controller.label
+     description: externaldb.groups.silk_controller.description
+     properties:
+     - name: silk_controller_db_name
+       label: externaldb.db_name.label
+       description: externaldb.groups.silk_controller.silk_controller_db_name.description
+       type: text
+       default: network_connectivity
+       mandatory: true
+     - name: silk_controller_db_host
+       label: externaldb.db_host.label
+       type: text
+       mandatory: true
+       validation_regex: "^[-A-Za-z0-9]+(\\.[-A-Za-z0-9]+)+$"
+       validation_error_message: externaldb.db_host.validation_error_message
+     - name: silk_controller_db_user
+       label: externaldb.db_user.label
+       type: text
+       mandatory: true
+     - name: silk_controller_db_password
+       label: externaldb.db_password.label
+       type: password
+       mandatory: true
+   - name: uaa
+     label: externaldb.groups.uaa.label
+     description: externaldb.groups.uaa.description
+     properties:
+     - name: uaa_db_name
+       label: externaldb.db_name.label
+       description: externaldb.groups.uaa.uaa_db_name.description
+       type: text
+       default: uaa
+       mandatory: true
+     - name: uaa_db_host
+       label: externaldb.db_host.label
+       type: text
+       mandatory: true
+       validation_regex: "^[-A-Za-z0-9]+(\\.[-A-Za-z0-9]+)+$"
+       validation_error_message: externaldb.db_host.validation_error_message
+     - name: uaa_db_user
+       label: externaldb.db_user.label
+       type: text
+       mandatory: true
+     - name: uaa_db_password
+       label: externaldb.db_password.label
+       type: password
+       mandatory: true

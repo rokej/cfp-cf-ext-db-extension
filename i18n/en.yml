@@ -1,0 +1,38 @@
+use-external-cf-db.label: Use external databases
+externaldb.db_name.label: Database name
+externaldb.db_host.label: Database host name
+externaldb.db_host.validation_error_message: The field must be a valid IP address or fully qualified domain name.
+externaldb.db_user.label: Database user name
+externaldb.db_password.label: Database user password
+externaldb.label: External databases
+externaldb.groups.general.label: General
+externaldb.groups.general.description: General database configuration applied to all databases.
+externaldb.groups.general.db_type.label: External database type
+externaldb.groups.general.db_type.description: All databases must be of the same type.
+externaldb.groups.general.db_port.label: External database port
+externaldb.groups.general.db_port.description: External database connection port number.
+externaldb.groups.general.db_port.validation_error_message: The field must be a valid port number.
+externaldb.groups.bbs.label: BBS
+externaldb.groups.bbs.description: This is the external database for Diego's Bulletin Board System (BBS).
+externaldb.groups.bbs.bbs_db_name.description: External database name for Diego's Bulletin Board System (BBS).
+externaldb.groups.cc.label: Cloud controller
+externaldb.groups.cc.description: This is the external database for the Cloud Controller to store orgs, spaces, services, user roles, and etc.
+externaldb.groups.cc.cc_db_name.description: External database name for the Cloud Controller which stores orgs, spaces, services, user roles, and etc.
+externaldb.groups.credhub.label: CredHub
+externaldb.groups.credhub.description: This is the external database for CredHub to centralize credential management.
+externaldb.groups.credhub.credhub_db_name.description: External database name for CredHub which centralizes credential management.
+externaldb.groups.locket.label: Locket
+externaldb.groups.locket.description: This is the external database for Locket for maintenance of distributed locks and component presence.
+externaldb.groups.locket.locket_db_name.description: External database name for Locket which manages distributed locks and component presence.
+externaldb.groups.policy_server.label: Policy server
+externaldb.groups.policy_server.description: This is the external database for Policy Server to maintains policies for traffic between application containers.
+externaldb.groups.policy_server.policy_server_db_name.description: External database for Policy Server which maintains policies for traffic between application containers.
+externaldb.groups.routing_api.label: Routing API
+externaldb.groups.routing_api.description: This is the external database for Routing API that manages HTTP and TCP routing.
+externaldb.groups.routing_api.routing_api_db_name.description: External database name for Routing API which manages HTTP and TCP routing.
+externaldb.groups.silk_controller.label: Silk controller
+externaldb.groups.silk_controller.description: This is the external database for silk-controller to manage IP subnet lease allocation across the cluster.
+externaldb.groups.silk_controller.silk_controller_db_name.description: External database name for silk-controller which manages IP subnet lease allocation across the cluster.
+externaldb.groups.uaa.label: UAA
+externaldb.groups.uaa.description: This is the external database for CloudFoundry User Account and Authentication (UAA) Server.
+externaldb.groups.uaa.uaa_db_name.description: External database name for CloudFoundry User Account and Authentication (UAA) Server.

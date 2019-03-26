@@ -1,0 +1,42 @@
+external_database_type: ((uiconfig.db_type))
+external_database_port: ((uiconfig.db_port))
+
+external_cc_database_name: ((uiconfig.cc_db_name))
+external_cc_database_address: ((uiconfig.cc_db_host))
+external_cc_database_password: ((uiconfig.cc_db_password))
+external_cc_database_username: ((uiconfig.cc_db_user))
+
+external_uaa_database_name: ((uiconfig.uaa_db_name))
+external_uaa_database_address: ((uiconfig.uaa_db_host))
+external_uaa_database_password: ((uiconfig.uaa_db_password))
+external_uaa_database_username: ((uiconfig.uaa_db_user))
+
+external_bbs_database_name: ((uiconfig.bbs_db_name))
+external_bbs_database_address: ((uiconfig.bbs_db_host))
+external_bbs_database_password: ((uiconfig.bbs_db_password))
+external_bbs_database_username: ((uiconfig.bbs_db_user))
+
+external_routing_api_database_name: ((uiconfig.routing_api_db_name))
+external_routing_api_database_address: ((uiconfig.routing_api_db_host))
+external_routing_api_database_password: ((uiconfig.routing_api_db_password))
+external_routing_api_database_username: ((uiconfig.routing_api_db_user))
+
+external_policy_server_database_name: ((uiconfig.policy_server_db_name))
+external_policy_server_database_address: ((uiconfig.policy_server_db_host))
+external_policy_server_database_password: ((uiconfig.policy_server_db_password))
+external_policy_server_database_username: ((uiconfig.policy_server_db_user))
+
+external_silk_controller_database_name: ((uiconfig.silk_controller_db_name))
+external_silk_controller_database_address: ((uiconfig.silk_controller_db_host))
+external_silk_controller_database_password: ((uiconfig.silk_controller_db_password))
+external_silk_controller_database_username: ((uiconfig.silk_controller_db_user))
+
+external_locket_database_name: ((uiconfig.locket_db_name))
+external_locket_database_address: ((uiconfig.locket_db_host))
+external_locket_database_password: ((uiconfig.locket_db_password))
+external_locket_database_username: ((uiconfig.locket_db_user))
+
+external_credhub_database_name: ((uiconfig.credhub_db_name))
+external_credhub_database_address: ((uiconfig.credhub_db_host))
+external_credhub_database_password: ((uiconfig.credhub_db_password))
+external_credhub_database_username: ((uiconfig.credhub_db_user))
